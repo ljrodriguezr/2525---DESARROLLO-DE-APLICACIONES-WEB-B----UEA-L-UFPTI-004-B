@@ -1,0 +1,18 @@
+h1{color: rgb(229, 64, 223);
+margin-left: 500px;
+font-family: "Courier New", monospace;}
+h2{color: rgb(115, 189, 226);
+margin-left: 500px;
+font-family: Arial, Helvetica, sans-serif, monospace;}
+h3{color: rgb(60, 232, 13);
+margin-left: 700px;
+font-family: Cambria, monospace;}
+h4{color: rgb(15, 80, 245);
+font-family: 'Franklin Gothic Medium', monospace;}
+h5{color: rgb(249, 85, 85);
+font-family: 'Franklin Gothic Medium', monospace;}
+h6{color: rgb(18, 81, 106);
+font-family: 'Franklin Gothic Medium', monospace;}
+body {
+  background-color: #f7e4ec; /* Puedes cambiar este color */
+}
