@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Información</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+           : 4px;
+            margin-bottom: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        span {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <h1>Registro de Información</h1>
+
+        <label>Nombre:
+            <input type="text" id="nombre">
+            <span id="errorNombre"></span>
+        </label>
+
+        <label>Email:
+            <input type="email" id="email" required>
+            <span id="errorEmail"></span>
+        </label>
+
+        <label>Edad:
+            <input type="number" id="edad" min="1" max="120">
+            <span id="errorEdad"></span>
+        </label>
+
+        <label>Contraseña:
+            <input type="password" id="contrasena" required>
+            <span id="errorContrasena"></span>
+        </label>
+
+        <label>Confirmar contraseña:
+            <input type="password" id="confirmarContrasena" required>
+            <span id="errorConfirmar"></span>
+        </label>
+
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById("formulario").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let nombre = document.getElementById("nombre").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let edad = parseInt(document.getElementById("edad").value);
+            let contrasena = document.getElementById("contrasena").value;
+            let confirmar = document.getElementById("confirmarContrasena").value;
+
+            let valido = true;
+
+            // Limpiar errores
+            document.getElementById("errorNombre").textContent = "";
+            document.getElementById("errorEmail").textContent = "";
+            document.getElementById("errorEdad").textContent = "";
+            document.getElementById("errorContrasena").textContent = "";
+            document.getElementById("errorConfirmar").textContent = "";
+
+            if (nombre === "") {
+                document.getElementById("errorNombre").textContent = "El nombre es obligatorio.";
+                valido = false;
+            }
+
+            if (!email.includes("@")) {
+                document.getElementById("errorEmail").textContent = "El email no es válido.";
+                valido = false;
+            }
+
+            if (isNaN(edad) || edad < 1 || edad > 120) {
+                document.getElementById("errorEdad").textContent = "Introduce una edad válida (1-120).";
+                valido = false;
+            }
+
+            if (contrasena.length < 6) {
+                document.getElementById("errorContrasena").textContent = "La contraseña debe tener al menos 6 caracteres.";
+                valido = false;
+            }
+
+            if (contrasena !== confirmar) {
+                document.getElementById("errorConfirmar").textContent = "Las contraseñas no coinciden.";
+                valido = false;
+            }
+
+            if (valido) {
+                alert("Formulario enviado correctamente.");
+                // Aquí podrías enviar los datos al servidor
+            }
+        });
+    </script>
+</body>
+</html>
