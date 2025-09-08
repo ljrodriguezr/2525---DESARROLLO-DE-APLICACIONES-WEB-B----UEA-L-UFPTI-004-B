@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Página Bootstrap + JS</title>
+  https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="bg-primary text-white p-3">
+    <div class="container">
+      <h1>MI PAGINA WEB</h1>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Productos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección Principal -->
+  <main class="container my-4">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- Tabla de Productos -->
+    <h2>Productos</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Disponibilidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Producto 1</td>
+          <td>$10</td>
+          <td>Disponible</td>
+        </tr>
+        <tr>
+          <td>Producto 2</td>
+          <td>$20</td>
+          <td>Agotado</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Formulario de Contacto -->
+    <h2>Contacto</h2>
+    <form id="contactForm">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" required>
+       digita tu nombre.</div>
+      </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="correo" required>
+        <div class="invalid-feedback">Ingresa tu correo.</div>
+      </div>
+      <div class="mb-3">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+        <div class="invalid-feedback">El mensaje no puede estar vacío.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+    <!-- Botón de Alerta -->
+    <button class="btn btn-warning mt-4" onclick="mostrarAlerta()">Haz clic aquí</button>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="bg-dark text-white text-center p-3">
+    <p>Contacto: luciarodriguez962018@gmail.com | Síguenos en redes sociales</p>
+  </footer>
+
+  https://ljrodriguez.bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
+  <script src="script.js"></script>
+</body>
+</html>
